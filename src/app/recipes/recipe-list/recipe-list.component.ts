@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Recipe } from '../recipe.model';
 
 @Component({
@@ -7,6 +7,7 @@ import { Recipe } from '../recipe.model';
   styleUrls: ['./recipe-list.component.css']
 })
 export class RecipeListComponent implements OnInit {
+  @Output() recipeWasRecieved = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
       new Recipe('Paneer Tikka',
           'Paneer tikka made of panner and green peppers',
@@ -19,9 +20,12 @@ export class RecipeListComponent implements OnInit {
           'http://www.vegrecipesofindia.com/wp-content/uploads/2014/08/tawa-paneer-tikka-recipe-2.jpg')
 
   ];
-  constructor() { }
+    constructor() { }
 
-  ngOnInit() {
-  }
+      ngOnInit() {
+      }
+    onRecipeGet(recipe: Recipe){
+        this.recipeWasRecieved.emit(recipe);
+    }
 
 }
