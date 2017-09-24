@@ -6,8 +6,5 @@ import { Component, Output, EventEmitter, Input } from '@angular/core';
     styles: ['./header.component.css']
 })
 export class HeaderComponent{
-    @Output() tabSelected = new EventEmitter<string>();
-    onSelect(selectedTab: string){
-        this.tabSelected.emit(selectedTab);
-    }
+
 }
