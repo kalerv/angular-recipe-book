@@ -4,7 +4,6 @@ import { Ingredient } from '../../shared/ingredient.model';
 import {ShoppingListService} from "../../shopping-list/shopping-list-service/shopping-list.service";
 @Injectable()
 export class RecipeService {
-    selectedRecipe = new EventEmitter<Recipe>();
     private recipes: Recipe[] = [
         new Recipe('Paneer Tikka',
             'Paneer tikka made of panner and green peppers',
