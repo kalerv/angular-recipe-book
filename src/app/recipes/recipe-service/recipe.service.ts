@@ -6,7 +6,7 @@ import {ShoppingListService} from "../../shopping-list/shopping-list-service/sho
 export class RecipeService {
     selectedRecipe = new EventEmitter<Recipe>();
     private recipes: Recipe[] = [
-        new Recipe(1,'Paneer Tikka',
+        new Recipe('Paneer Tikka',
             'Paneer tikka made of panner and green peppers',
             './assets/images/tawa-paneer-tikka-recipe-2.jpg',
             [
@@ -15,7 +15,7 @@ export class RecipeService {
                 new Ingredient('Onion', 2)
             ]
         ),
-        new Recipe(2, 'Chiken Tikka',
+        new Recipe('Chiken Tikka',
             'Chicken tikka made with chicken breast',
             './assets/images/CHicken-REcipe.jpg',
             [
@@ -24,7 +24,7 @@ export class RecipeService {
                 new Ingredient('Onion', 2)
             ]
         ),
-        new Recipe(3,'Seekh kabob',
+        new Recipe('Seekh kabob',
             'Seekh kabob made with frsh chicken breast',
             './assets/images/seekh-kabob.jpeg',
             [
@@ -45,7 +45,7 @@ export class RecipeService {
     addRecipeIngredientsToList(recipe: Recipe){
         this.slService.addIngredients(recipe.ingredients);
     }
-    getRecipeById(id: number){
-        return this.recipes[id - 1];
+    getRecipeById(index: number){
+        return this.recipes[index];
     }
 }
