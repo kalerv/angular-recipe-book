@@ -12,11 +12,14 @@ import { DropdownDirective } from '../shared/dropdown.directive';
 import {ShoppingListService} from "../shopping-list/shopping-list-service/shopping-list.service";
 import {RecipeService} from "../recipes/recipe-service/recipe.service";
 import {RecipesStartComponent} from "../recipes/recipes-start/recipes-start.component";
+import {RecipeEditComponent} from "../recipes/recipe-edit/recipe-edit.component";
 const appRoutes: Routes = [
     { path: '', redirectTo: '/recipes', pathMatch: 'full'},
     { path: 'recipes', component: RecipesComponent, children: [
         { path: '', component: RecipesStartComponent},
-        { path: ':id', component: RecipeDetailComponent}
+        { path: 'new', component: RecipeEditComponent},
+        { path: ':id', component: RecipeDetailComponent},
+        { path: ':id/edit', component: RecipeEditComponent}
         ]
     },
     { path: 'shopping-list', component: ShoppingListComponent},
